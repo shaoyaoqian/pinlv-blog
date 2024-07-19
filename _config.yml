@@ -3,37 +3,40 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 频率
-subtitle: 风卷过的起点
-description: 爱美食/纪录片/夜猫子
-keywords: [blog, 博客, pinlyu, 频率, Dylan Zhang]
-author: 班班
+title: 卮言
+subtitle: 只能短暂 所以大嚷
+description: 爱美食/看电影/去旅行
+keywords: [拖拖, shaoyaoqian, Hexo, blog, 博客, 卮言]
+author: 拖拖
 language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
-## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://pinlyu.com
+## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
+abbrlink:
+  alg: crc16  # support crc16(default) and crc32
+  rep: dec    # support dec(default) and hex
+url: https://www.pengfeima.cn
 root: /
-permalink: /posts/:pid/
+permalink: posts/:category/:abbrlink/
 permalink_defaults:
 pretty_urls:
-  trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: false # Set to false to remove trailing '.html' from permalinks
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
 
 # Directory
 source_dir: source
 public_dir: public
 tag_dir: tags
-archive_dir: timeline
-category_dir: ''
+archive_dir: archives
+category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
   - 404.html
 
 # Writing
-new_post_name: :year/:title.md # File name of new posts
+new_post_name: :year/:year-:month-:day-:title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link:
@@ -51,7 +54,7 @@ future: true
 syntax_highlighter: prismjs #highlight.js
 highlight:
   auto_detect: false
-  line_number: true
+  line_number: false
   line_threshold: 0
   tab_replace: ''
   exclude_languages:
@@ -80,6 +83,7 @@ category_map:
   生活: life
   观点: observer
   笔记: notes
+  科研: research
 tag_map:
 
 # Metadata elements
@@ -93,7 +97,7 @@ meta_generator: true
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 ## updated_option supports 'mtime', 'date', 'empty'
-updated_option: 'empty' # do not use file modified time as updated time
+updated_option: 'mtime' # do not use file modified time as updated time
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -104,6 +108,7 @@ pagination_dir: page
 ## include:/exclude: options only apply to the 'source/' folder
 include:
 exclude:
+  - _posts/2023/template/*
 ignore:
 
 # Extensions
@@ -122,27 +127,60 @@ js_minifier:
 image_minifier:
   enable: false
 
-# hexo-renderer-marked
-## https://github.com/hexojs/hexo-renderer-marked
-marked:
-  figcaption: true
+# hexo-renderer-markdown-it
+## See: https://github.com/hexojs/hexo-renderer-markdown-it/wiki/Advanced-Configuration
+markdown:
+  langPrefix: 'language-'
+  plugins:
+    - markdown-it-footnote
+    - markdown-it-ins
+    - markdown-it-sub
+    - markdown-it-sup
 
 # 灰色滤镜
 gray_filter: false
 
-# 对象存储存储桶自定义域名
-cos_domain: https://cdn.pinlyu.com
+# Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+  type: git
+  repository: git@github.com:shaoyaoqian/shaoyaoqian.github.io.git
+  branch: main
+
+github:
+  repository: shaoyaoqian/shaoyaoqian.github.io
+  branch: source
 
 # Artalk
 ## Config: https://artalk.js.org
 ## Plugin: https://github.com/leirock/hexo-next-artalk
 artalk:
   enable: true
-  server: https://comment.pinlyu.com
-  jsUrl: https://comment.pinlyu.com/dist/Artalk.js
-  cssUrl: https://comment.pinlyu.com/dist/Artalk.css
-  site: 频率
+  server: https://artalk.pengfeima.cn/
+  jsUrl: https://artalk.pengfeima.cn/dist/Artalk.js
+  cssUrl: https://artalk.pengfeima.cn/dist/Artalk.css
+  site: 卮言
   commentCount: true
   pvCount: false
   darkMode: auto
   useBackendConf: true
+
+
+
+# Search
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
+
+
+# Security
+encrypt: # hexo-blog-encrypt
+  abstract: 有东西被加密了, 请输入密码查看.
+  message: 您好, 这里需要密码.
+  tags:
+  - {name: secret, password: A}
+  theme: wave
+  wrong_pass_message: 抱歉, 这个密码看着不太对, 请再试试.
+  wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.

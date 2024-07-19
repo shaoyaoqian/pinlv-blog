@@ -36,11 +36,11 @@ darkmode: true
 # ============================================================= #
 
 favicon:
-  small: /resources/favicon/favicon.ico
-  medium: /resources/favicon/favicon-32.png
-  apple_touch_icon: /resources/favicon/apple-touch-icon.png
-  safari_pinned_tab: ''
-  android_manifest: ''
+  small: /img/favicon/favicon-16x16.png
+  medium: /img/favicon/favicon-32x32.png
+  apple_touch_icon: /img/favicon/apple-touch-icon.png
+  safari_pinned_tab: /img/favicon/safari-pinned-tab.svg
+  android_manifest: /img/favicon/site.webmanifest
 
 
 # ============================================================= #
@@ -48,54 +48,65 @@ favicon:
 # ============================================================= #
 
 menu:
-  life: /life/ || fas fa-pizza-slice
-  observer: /observer/ || fas fa-eye
-  notes: /notes/ || fas fa-book
-  arts: /arts/ || fas fa-guitar
+  life: /categories/life/ || fas fa-pizza-slice
+  observer: /categories/observer/ || fas fa-eye
+  notes: /categories/notes/ || fas fa-book
+  # culture: /culture/ || fas fa-guitar
   album: /album/ || fas fa-camera-retro
+  research: /categories/research/ || fas fa-vial
   guestbook: /guestbook/ || fas fa-splotch
-  #  default: /guestbook/ || fas fa-splotch
-  #  links: ../links/ || fas fa-link
+  # archives: /timeline/ || fa fa-archive
 
+menu_settings:
+  icons: true
 
 # ============================================================= #
 # ===================== Sidebar Settings ====================== #
 # ============================================================= #
 
+# sidebar:
+#   position: right
+#   # display: post
+#   # display: always
+#   display: hide
+#   # display: remove
+  
 avatar:
-  url: /resources/img/avatar.webp
-  rounded: true
+  url: /img/portrait.jpg
+  rounded: false
+  rotated: false
 
 site_state: false
 
 social:
-  微博: https://dlzhang.com/weibo || fa-brands fa-weibo
-  哔哩哔哩: https://dlzhang.com/bilibili || fa-brands fa-bilibili
-  RSS: /atom.xml || fas fa-rss
+  微博: https://weibo.com/u/5336841337 || fa-brands fa-weibo
+  # 哔哩哔哩: https://www.bilibili.com || fa-brands fa-bilibili
+  GitHub: https://github.com/shaoyaoqian || fa-brands fa-github
+  # 微信: https://www.bilibili.com || fa-brands fa-weixin
+  邮件: mailto:499908174@qq.com || fa-solid fa-envelope
+  # RSS: /atom.xml || fas fa-rss
 
 social_icons:
   icons_only: true
 
 toc:
   number: false
-  wrap: true # 超出范围文字是否换行
-  max_depth: 3 # <h3> ###
+  wrap: false # 超出范围文字是否换行
+  max_depth: 4 # <h4> ####
   expand_all: true
-
 
 # ============================================================= #
 # ====================== Footer Settings ====================== #
 # ============================================================= #
 
 footer:
-  since: 2017
+  since: 2023
   icon:
-    name: fas fa-heart
+    name: 
     animated: true
     color: "#f06292"
-  copyright: 频率
+  copyright: 拖拖
   powered: false
-
 
 # ============================================================= #
 # ======================= Post Settings ======================= #
@@ -126,9 +137,9 @@ theme_color:
 
 codeblock:
   # All available themes: https://theme-next.js.org/highlight/
-  #prism:
-  #  light: prism
-  #  dark: prism-okaidia
+  prism:
+    light: prism
+    dark: prism-okaidia
   copy_button:
     enable: true
     style: flat
@@ -171,23 +182,17 @@ font:
 math:
   mathjax:
     enable: true
-    tags: ams
+    tags: none
+# Easily enable fast Ajax navigation on your website.
+# For more information: https://github.com/next-theme/pjax
 pjax: true
 fancybox: true
 lazyload: true
 pangu: true
 
-# Umami Analytics
-# See: https://umami.is/
-umami:
-  enable: true
-  script_url: https://stats.pinlyu.com/script.js
-  website_id: dfd4ef79-619d-4b55-b84e-981fd43cefa9
-  data_host_url: # <your umami script CDN url> https://github.com/umami-software/umami/issues/95
-
 # Dependencies: https://github.com/next-theme/hexo-generator-searchdb
 local_search:
-  enable: false
+  enable: true
 
 
 # ============================================================= #
@@ -213,7 +218,7 @@ tabs:
 # ============================================================= #
 
 motion:
-  enable: false
+  enable: true
 
 
 # ============================================================= #
