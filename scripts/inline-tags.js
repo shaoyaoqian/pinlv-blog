@@ -30,7 +30,7 @@ hexo.extend.tag.register('dot', function (args) {
 
 // 友链列表
 hexo.extend.tag.register('linklist', function (args) {
-    const jsonSrc = 'https://githubimages.pengfeima.cn/json/NEXT/' + args + '.json';
+    const jsonSrc = 'https://githubimages.pengfeima.cn/json/friends_shaoyaoqian_MerryJingle.json';
     return `<div class="link-list" json-src="${jsonSrc}"></div>`;
   });
 

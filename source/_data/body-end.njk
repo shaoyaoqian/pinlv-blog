@@ -28,19 +28,19 @@ linkLists.forEach(function(linkList) {
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
       var data = JSON.parse(xhr.responseText);
-      
       var li = "";
       linkList.innerHTML = '';
 
-      for (var infoIndex = 0; infoIndex < data.length; infoIndex++) {
-        var info = data[infoIndex];
+      for (var infoIndex = 0; infoIndex < data['content'].length; infoIndex++) {
+        var info = data['content'][infoIndex];
+        
         var labelWarn = info['warn'] ? '<span class="label warn">' + info['warn'] + '</span>' : '';
         var labelInfo = info['info'] ? '<span class="label info">' + info['info'] + '</span>' : '';
 
         li += '<div class="link-list-container">';
-        li += '<img class="link-list-image" src="' + info['logo'] + '">';
+        li += '<img class="link-list-image" src="' + info['avatar'] + '">';
         li += '<p>' + info['title'] + labelInfo + labelWarn + '</p>';
-        li += '<p>' + info['intro'] + '</p>';
+        li += '<p>' + info['description'] + '</p>';
         li += '<a href="' + info['url'] + '" rel="noopener" target="_blank" data-pjax-state=""></a>';
         li += '</div>';
       }
