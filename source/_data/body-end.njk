@@ -20,9 +20,9 @@
 var linkLists = document.querySelectorAll(".link-list");
 
 linkLists.forEach(function(linkList) {
-  var listPath = linkList.getAttribute('json-src');
-  var iconPath = linkList.getAttribute('icon-src');
-  
+  var listPath = linkList.getAttribute('data-json-src');
+  console.log(listPath);
+
   var xhr = new XMLHttpRequest();
   xhr.open('GET', listPath, true);
   xhr.onreadystatechange = function() {
@@ -38,7 +38,7 @@ linkLists.forEach(function(linkList) {
         var labelInfo = info['info'] ? '<span class="label info">' + info['info'] + '</span>' : '';
 
         li += '<div class="link-list-container">';
-        li += '<img class="link-list-image" src="' + iconPath + info['logo'] + '">';
+        li += '<img class="link-list-image" src="' + info['logo'] + '">';
         li += '<p>' + info['title'] + labelInfo + labelWarn + '</p>';
         li += '<p>' + info['intro'] + '</p>';
         li += '<a href="' + info['url'] + '" rel="noopener" target="_blank" data-pjax-state=""></a>';

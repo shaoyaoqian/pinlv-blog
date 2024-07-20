@@ -1,14 +1,9 @@
 ---
 title: 光影集
 comments: false
+description: 更新日期：2023年2月2日
+categories: [相册]
 ---
 
-<div class="text-center">岁月无声，光影留痕。</div>
 
-{% subpagebox album %}
-风光 | landscape | 杭州曲院风荷.webp
-纪实 | documentary | 浙大毕业季玉泉.webp
-风物 | culture | 香港ACGHK2022.webp
-{% endsubpagebox %}
-
-{% license album 光影集 %}
+<div id="0xje8cj39d0e" class="justified-gallery tile-galery"></div>

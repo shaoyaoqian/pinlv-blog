@@ -30,10 +30,9 @@ hexo.extend.tag.register('dot', function (args) {
 
 // 友链列表
 hexo.extend.tag.register('linklist', function (args) {
-    const iconSrc = cosDomain + '/links/' + args + '/';
-    const jsonSrc = args + '.json';
-    return `<div class="link-list" icon-src="${iconSrc}" json-src="${jsonSrc}"></div>`;
-});
+    const jsonSrc = 'https://githubimages.pengfeima.cn/json/NEXT/' + args + '.json';
+    return `<div class="link-list" json-src="${jsonSrc}"></div>`;
+  });
 
 
 // 页面许可协议

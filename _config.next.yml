@@ -13,7 +13,7 @@ minify: true
 custom_file_path:
   head: source/_data/head.njk
   #header: source/_data/header.njk
-  #sidebar: source/_data/sidebar.njk
+  sidebar: source/_data/sidebar.njk
   #postMeta: source/_data/post-meta.njk
   postBodyEnd: source/_data/post-body-end.njk
   footer: source/_data/footer.njk
@@ -76,8 +76,8 @@ avatar:
   rounded: false
   rotated: false
 
-site_state: false
-
+site_state: true  # 展示有多少标签和分类
+ 
 social:
   微博: https://weibo.com/u/5336841337 || fa-brands fa-weibo
   # 哔哩哔哩: https://www.bilibili.com || fa-brands fa-bilibili
@@ -237,4 +237,4 @@ vendors:
 # Assets
 # css - local
 # js - only valid when vendors.internal is local
-images: /resources/img/ # root /img/ folder
+images: /img/ # root /img/ folder
