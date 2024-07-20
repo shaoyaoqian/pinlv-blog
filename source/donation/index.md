@@ -16,7 +16,7 @@ toc:
 ![使用微信扫描](https://cdn.pinlyu.com/file/wechat-donation.webp#250x)
 <!-- endtab -->
 
-<!-- tab PayPal@fa-brands fa-paypal -->
+<!-- tab 支付宝 -->
 <div class="text-center">点击下方按钮前往支付</div>
 <div class="text-center">{% btn https://paypal.me/zhangdl, PayPal, fa-brands fa-paypal fa-fw fa-lg, PayPal %}</div>
 <br/>
